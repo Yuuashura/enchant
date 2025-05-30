@@ -1,6 +1,14 @@
+/* BARU */
 body {
     font-family: sans-serif;
-    background-color: #f0f2f5;
+    /* --- KODE BARU UNTUK BACKGROUND GAMBAR --- */
+    background-image: url('https://files.catbox.moe/mr5ejl.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* --- AKHIR KODE BARU --- */
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,23 +16,127 @@ body {
     margin: 0;
 }
 
+/* ================= CSS BARU UNTUK HEADER ================= */
+
+.page-header {
+    position: fixed; /* Membuat header tetap di atas saat di-scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Memastikan header selalu di lapisan paling atas */
+    
+    display: flex;
+    justify-content: left; /* Menengahkan konten header */
+    align-items: center;
+    padding: 15px 20px;
+
+    /* Efek "Frosted Glass" yang konsisten dengan kartu */
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header-icon {
+    height: 40px; /* Atur ukuran ikon */
+    margin-right: 15px; /* Jarak antara ikon dan judul */
+    margin-left: 20px;
+}
+
+.page-header h1 {
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 0; /* Menghapus margin default dari h1 */
+}
+
+/* ========================================================= */
+
 .container {
-    background-color: white;
+    /* background-color: white; */
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.228);
     text-align: center;
     max-width: 500px;
     width: 90%;
+    background-color: rgba(255, 255, 255, 0.2); /* 1. Warna semi-transparan */
+    backdrop-filter: blur(10px); 
+}
+
+.container h1{
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.326);
 }
 
 h1 {
     color: #333;
+
 }
 
+/* --- STYLE BARU UNTUK TOMBOL PILIH FILE --- */
+
+/* 1. Sembunyikan input file asli */
 input[type="file"] {
-    display: block;
+    display: none;
+}
+
+/* 2. Style label agar terlihat seperti tombol kustom yang elegan */
+.custom-file-upload {
+    display: inline-block;
+    padding: 12px 24px;
     margin: 1.5rem auto;
+    cursor: pointer; /* Menandakan elemen ini bisa diklik */
+    
+    color: white;
+    background: linear-gradient(135deg, #2d92ff, #0a66c2);
+    border: 2px solid #a2d2ff;
+    border-radius: 50px; /* Membuat sudut sangat bulat dan elegan */
+    
+    font-weight: bold;
+    font-size: 1rem;
+    
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* 3. Efek saat cursor mouse di atas tombol */
+.custom-file-upload:hover {
+    background: linear-gradient(135deg, #0a66c2, #2d92ff);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.5);
+    transform: translateY(-2px); /* Sedikit terangkat ke atas */
+}
+
+/* 4. Efek saat tombol diklik */
+.custom-file-upload:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* --- Sesuaikan juga tombol "Enhance Foto!" agar serasi --- */
+button#submit-button {
+    background: #0d6efd; /* Warna biru solid yang cocok */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block; /* Agar bisa di-center dengan margin auto */
+    margin: 0 auto; /* Posisi di tengah */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button#submit-button:hover {
+    background-color: #0b5ed7;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+button#submit-button:active {
+    transform: translateY(0);
 }
 
 button {
@@ -44,6 +156,33 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+
+/* --- STYLE BARU UNTUK TAMPILAN NAMA FILE --- */
+
+#file-name-display {
+    color: #f0f0f0; /* Warna teks yang lembut dan cocok dengan tema */
+    margin-top: -10px; /* Mengurangi jarak dengan tombol di atasnya */
+    margin-bottom: 20px; /* Memberi jarak ke tombol Enhance di bawahnya */
+    font-size: 0.9rem;
+    font-style: italic;
+    
+    /* Penting untuk menangani nama file yang sangat panjang */
+    word-break: break-all; 
+}
+
+.custom-file-upload {
+    /* ... (properti yang sudah ada) ... */
+    display: inline-block;
+    padding: 12px 24px;
+    /* ... (dan seterusnya) ... */
+
+    /* --- TAMBAHKAN INI UNTUK MENANGANI NAMA FILE PANJANG --- */
+    max-width: 80%; /* Batasi lebar maksimum tombol */
+    white-space: nowrap; /* Mencegah teks turun ke baris baru */
+    overflow: hidden; /* Sembunyikan teks yang meluber */
+    text-overflow: ellipsis; /* Tampilkan "..." pada teks yang terpotong */
 }
 
 #result img {

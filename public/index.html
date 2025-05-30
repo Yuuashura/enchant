@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Enhancer</title>
+    <title>Furina Enchanter</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/25kspf.png">
 </head>
 <body>
+    <header class="page-header">
+        <img src="https://files.catbox.moe/25kspf.png" alt="Eralith Icon" class="header-icon">
+        <h1>Furina Enchanter</h1>
+    </header>
     <div class="container">
-        <h1>Photo Enhancer</h1>
+        <h2>Furina Photo Enhancer</h2> 
         <p>Unggah foto Anda untuk meningkatkan kualitasnya.</p>
         
         <form id="upload-form">
+            <label for="image-input" class="custom-file-upload" id="file-upload-label">
+                Pilih Gambar...
+            </label>
             <input type="file" id="image-input" name="image" accept="image/jpeg, image/png" required>
+            
+            <p id="file-name-display" class="hidden"></p> 
+            
             <button type="submit" id="submit-button">Enhance Foto!</button>
         </form>
         
