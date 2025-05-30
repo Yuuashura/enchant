@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Enhancer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Photo Enhancer</h1>
+        <p>Unggah foto Anda untuk meningkatkan kualitasnya.</p>
+        
+        <form id="upload-form">
+            <input type="file" id="image-input" name="image" accept="image/jpeg, image/png" required>
+            <button type="submit" id="submit-button">Enhance Foto!</button>
+        </form>
+        
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Memproses gambar, harap tunggu...</p>
+        </div>
+
+        <div id="result" class="hidden">
+            <h2>Hasil:</h2>
+            <img id="result-image" src="" alt="Enhanced Result">
+            <a id="download-link" href="#" download="enhanced-image.jpg">Download Gambar</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
