@@ -1,17 +1,26 @@
 {
-  "name": "home",
+  "name": "eralith-enchanter",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "A simple web application to enhance photos using an online API.",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "photo",
+    "enhancer",
+    "express",
+    "node"
+  ],
+  "author": "Yuuashura",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^5.1.0",
-    "form-data": "^4.0.2",
-    "multer": "^2.0.0"
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
